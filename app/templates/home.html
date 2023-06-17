@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>Recent Posts</h1>
+  <ul class="posts-list">
+    {% for post in object_list %}
+    <li class="post-item">
+      <a href="{% url 'article-detail' post.pk %}" class="post-title"
+        >{{ post.title }}</a> -
+        <a class= "post-meta"href="{%url "category" post.category%}"> {{post.category}}</a
+      >
+      <div class="post-meta">
+      By: {{ post.author.username}} 
+        {{post.post_date}}
+      </div>
+
+      <div class="post-actions">
+        {% if user.is_authenticated%}
+           {%if user.id == post.author.id%}
+            <a href="{% url 'update_post' post.pk %}" class="edit-btn">Edit</a>
+            <a href="{% url 'delete_post' post.pk %}" class="delete-btn">Delete</a>
+        {% endif %}
+      </div>
+           {% endif %}
+
+      <br />{{post.body|slice:":50"|safe}}
+    </li>
+
+    {% endfor %}
+  </ul>
+
+  {% endblock %}
+</div>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Developt</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+  </head>
+  <body>
+    <main>
+      <nav class="navbar">
+        <div class="navbar-title">
+          <a href="{% url "home" %}" class="home">Developt</a>
+        </div>
+        <div class="navbar-links">
+          {% if user.is_authenticated %}
+            <a href="{% url "add_post" %}" class="add-post">Add Blog</a>
+            <a href="{% url "add_category" %}" class="add-post">Add Category</a>
+            <a href="{% url "logout" %}" class="add-post">Logout</a>
+            
+              </div>
+                {% for category in categories %}
+                  <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                {% endfor %}
+              </div>
+            
+          {% else %}
+          {% if request.path != "/members/register/" %}
+            <a href="{% url "register" %}" class="add-post">Register</a>
+          {% endif %}
+          
+            <div class="navbar-links">
+              {% if request.path != "/members/login/" %}
+              {% if request.path != "/members/register/" %}
+              <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="add-post">Admin</a>
+              {% endif %}
+              {% endif %}
+              {% if request.path != "/members/login/" %}
+              
+              <a href="{% url "login" %}" class="add-post">Login</a>
+              {% endif %}
+            </div>
+          
+          {% endif %}
+        </div>
+      </nav>
+      {% block content%} {% endblock content %}
+    </main>
+  </body>
+</html>

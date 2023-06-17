@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  {%if category_post%}
+  <h4>(Category)</h4>
+  <h1>{{name}} -</h1>
+  <ul>
+    {% for post in category_post %}
+    <li class="post-item">
+      <a href="{% url 'article-detail' post.pk %}" class="post-title"
+        >{{ post.title }}</a
+      >
+      <div class="post-meta">
+        - By: {{ post.author.username}} {{post.post_date}}
+      </div>
+      <div class="post-actions">
+        {% if user.is_authenticated%} {%if user.id == post.author.id%}
+        <a href="{% url 'update_post' post.pk %}" class="edit-btn">Edit</a>
+        <a href="{% url 'delete_post' post.pk %}" class="delete-btn">Delete</a>
+        {% endif %} {% endif %}
+      </div>
+      <br />{{post.body|slice:":50"|safe}}
+    </li>
+    {% comment %} {% else %}
+    <br /><br /><br /><br />
+    <strong>You are not the Author to edit.</strong>
+    {% endif %} {% endcomment %} {% endfor %}
+  </ul>
+</div>
+{%else%}
+<h2>No category matched</h2>
+{% endif %} {% endblock %}

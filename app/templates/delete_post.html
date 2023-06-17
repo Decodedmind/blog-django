@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %} Delete Blog Post {% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+<!-- prettier-ignore -->
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+<br />
+<h1>Delete Post</h1>
+<br /><br />
+<h3>Delete: {{ post.title }}</h3>
+<br />
+<div class="form-group">
+  <form method="POST">
+    {% csrf_token %}
+    <strong>Are you sure?</strong><br />
+    <button class="delete-btn">Delete Post</button>
+  </form>
+</div>
+{% else %}
+<br />
+<br />
+<br /><br />
+<strong>You are not the author to delete.</strong>
+{% endif %} {% endif %} {% endblock %}

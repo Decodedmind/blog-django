@@ -1,0 +1,229 @@
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-title {
+  font-size: 24px;
+  margin-right: auto;
+}
+
+.navbar-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navbar-links a:hover {
+  background-color: white;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links a:last-child {
+  margin-right: 0;
+}
+
+.navbar-links button {
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links button:hover {
+  background-color: #3E8E41;
+}
+    
+    /* Style the main content */
+    
+    main {
+      padding: 20px;
+    }
+    
+    .home {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .home:hover {
+      color: #c71111;
+    }
+    
+    /* Style the add post button */
+    
+    .add-post {
+      background-color: #d81515;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    
+    .add-post:hover {
+      background-color: white;
+      color: #c60d0d;
+    }
+
+    /* home.html */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .posts-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .post-item {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    
+    .post-title {
+      text-decoration: none;
+      color: #333;
+      font-size: 24px;
+    }
+    
+    .post-meta {
+      font-size: 25px;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+    
+    .post-actions {
+      margin-top: 10px;
+    }
+    
+    .edit-btn, .delete-btn {
+      text-decoration: none;
+      color: #fff;
+      background-color: #333;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    .edit-btn {
+      margin-right: 10px;
+    }
+    
+    .delete-btn {
+      background-color: #f00;
+    }
+
+    /* add_post  */
+    .form-container {
+      margin: 2rem;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+    }
+    
+    .form-group {
+      margin: 1rem 0;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+    
+    button[type="submit"] {
+      display: block;
+      margin: 2rem 0 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      background-color: #e02424;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #9b1f1f;
+    }
+
+
+    /* delete */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+  }
+  h3 {
+      font-size: 1.5em;
+      margin-top: 2em;
+  }
+  strong {
+      font-size: 1.2em;
+  }
+  
+  
+  .delete-btn:hover {
+      background-color: #d32f2f;
+  }
+
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ccc;
+  }
+    

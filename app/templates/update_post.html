@@ -1,0 +1,27 @@
+
+{% extends "base.html" %} 
+{%block title%}Update Post!{% endblock %}
+{%block content%}
+{% if user.is_authenticated %}
+  {%if user.id == post.author.id%}  
+ <h1>Update post!</h1>
+ <br><br>
+ <div class ="form-group">
+   <form method="POST">
+    {% csrf_token %} 
+    {{form.as_p}}
+  <button>Update</button>
+  </div>
+  {% else %}
+  <br><br><br><br>
+           <strong>You are not the Author to edit.</strong>
+  {% endif %}
+{% else %}
+<br>
+<br>
+<br><br>`<br><br>`
+<strong>You know you're not supposed to be here</strong>
+
+{% endif %}
+{% endblock %}
+
